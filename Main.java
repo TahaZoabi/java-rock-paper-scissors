@@ -16,7 +16,7 @@ public class Main {
             String playerMove = input.nextLine();
             String computerChoice = computerChoice();
             String yourChoice = playerChoice(playerMove);
-            System.out.println("\nYou chose:        " + yourChoice);
+            System.out.println("\nYou chose:" + yourChoice);
             System.out.println("The computer chose: " + computerChoice);
 
            String result =  displayResults(yourChoice, computerChoice);
