@@ -26,11 +26,11 @@ public class Game extends Main {
             String result = displayResults(yourChoice, computerChoice);
             System.out.println(result); // print the results to the screen
 
-        } // if the user says no we display a nice message for him
+        } // if the user is not ready we display a nice message 
         else if (checkReady.equalsIgnoreCase("no")) {
             System.out.println("We will be waiting for you xD");
         }
-        else { // if user writes anything else he would be asked to try again
+        else { // if user writes anything else user  would be asked to try again
             System.out.println("Invalid Input please try again!");
         }
     }
@@ -52,7 +52,7 @@ public class Game extends Main {
 
     // create a method to pick the player's move
     public static String playerChoice(String move) {
-        // convert to lower case and remove all white spaces
+        // convert the user input to lower case and remove all white spaces
         move = move.toLowerCase().trim();
         // check if the user writes something other than the option and display an error message
         if (!(move.equals("rock") || move.equals("paper") || move.equals("scissors"))) {
