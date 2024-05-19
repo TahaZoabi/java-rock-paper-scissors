@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class Game extends Main {
-
     public static void playGame() {
         Scanner input = new Scanner(System.in); // create a scanner to take user's input
         System.out.println(">>Let's play Rock Paper Scissors.\n" + "Are you ready? (yes/no)");
-        String checkReady = input.nextLine(); // assign the user's answer if ready or not
+        String checkReady = input.nextLine();
 
         // check if the user is ready then start the game
         if (checkReady.equalsIgnoreCase("yes")) {
@@ -13,20 +12,18 @@ public class Game extends Main {
             System.out.println("Great! pick your choice \nrock - paper - scissors");
             String playerMove = input.nextLine(); // assign the user's choice
 
-            // call the computerChoice method and assign the returned value
             String computerChoice = computerChoice();
-            // call the playerChoice method and assign the returned value (pass in the user's choice)
             String yourChoice = playerChoice(playerMove);
 
             // print both the  player's move and the computer's move
             System.out.println("\nYou chose: " + yourChoice);
             System.out.println("The computer chose: " + computerChoice);
 
-            // calling the displayResults method and assign to a variable
+
             String result = displayResults(yourChoice, computerChoice);
             System.out.println(result); // print the results to the screen
 
-        } // if the user is not ready we display a nice message 
+        } // if the user is not ready we display a nice message
         else if (checkReady.equalsIgnoreCase("no")) {
             System.out.println("We will be waiting for you xD");
         }
@@ -58,16 +55,7 @@ public class Game extends Main {
         if (!(move.equals("rock") || move.equals("paper") || move.equals("scissors"))) {
             System.out.println("Invalid Input please choose a move (rock, paper, scissors");
         }
-        switch (move) { // confirming the player's move
-            case "rock":
-                return "rock";
-            case "paper":
-                return "paper";
-            case "scissors":
-                return "scissors";
-            default:
-                throw new IllegalStateException("Unexpected Error ");
-        }
+        return move;
     }
 
     // create a method to display the result of the game
